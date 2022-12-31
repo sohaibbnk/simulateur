@@ -1,21 +1,50 @@
 package simulateur;
 
-import java.util.ArrayList;
+  import  java.util.ArrayList;
 
 public class Queue {
-    Client cl;
-    ArrayList<Client> client=new ArrayList<>();
-    
-	public boolean isEmpty() {
-		if(client.size()==0)
-			return true;
-		else return false;
-	}
+     Client client;
+	ArrayList<Client> queue = new ArrayList<>();
 	
-	public void addQueueFirst(Client client) {
+	public boolean isEmpty() {
+		if(queue.size()==0) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	public void addQueueLast(Client client) {
+		queue.add(client);
 	}
 	
 	public Client getQueueFirst() {
-		return client.get(0);
+		return queue.get(0);		
 	}
+	
+	public void updateClientPatience() {
+		for(int i=0;i<queue.size();i++) {
+			queue.get(i).setPatience(queue.get(i).getPatience()+1);
+		}
+		for(int i=0;i<queue.size();i++) {
+			if(queue.get(i).getPatience()==7) {
+				queue.get(i).statisticManager.registerNonServedClient(client);
+			    queue.remove(i);
+			}
+		}
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    
 }
