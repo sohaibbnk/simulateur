@@ -3,7 +3,7 @@ package simulateur;
 public class Employee {
 	private int remainingServiceTime;
 	
-	//constructeur
+	///constructeur
 	public Employee() {
 	
 	}
