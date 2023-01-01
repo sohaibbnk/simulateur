@@ -4,8 +4,8 @@ public class Employee {
 	private int remainingServiceTime;
 	
 	///constructeur
-	public Employee() {
-	
+	public Employee(int time) {
+	this.remainingServiceTime=time;
 	}
 	
 public int getRemainingServiceTime() {
