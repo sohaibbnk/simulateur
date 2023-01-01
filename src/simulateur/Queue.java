@@ -4,36 +4,38 @@ package simulateur;
 
 public class Queue {
      Client client;
-	ArrayList<Client> queue = new ArrayList<>();
+	ArrayList<Client> cl = new ArrayList<>();
 	
 	public boolean isEmpty() {
-		if(queue.size()==0) {
+		if(cl.size()==0) {
 			return true;
 		}else {
 			return false;
 		}
 	}
 	public void addQueueLast(Client client) {
-		queue.add(client);
+		cl.add(client);
 	}
 	
 	public Client getQueueFirst() {
-		return queue.get(0);		
+		return cl.get(0);		
 	}
 	
 	public void updateClientPatience() {
-		for(int i=0;i<queue.size();i++) {
-			queue.get(i).setPatience(queue.get(i).getPatience()+1);
-		}
-		for(int i=0;i<queue.size();i++) {
-			if(queue.get(i).getPatience()==7) {
-				queue.get(i).statisticManager.registerNonServedClient(client);
-			    queue.remove(i);
+		if(cl.size()!=0) {
+			
+			for(int i=0;i<cl.size();i++) {
+				//cl.get(i).setPatience(cl.get(i).getPatience()+1);
+				cl.get(i).setServiceStartTime(cl.get(i).getServiceStartTime()+1);
+			
 			}
-		}
-		
-		
-		
+			for(int i=0;i<cl.size();i++) {
+				if(cl.get(i).getServiceStartTime()==7) {
+					cl.get(i).statisticManager.registerNonServedClient(client);
+					cl.remove(i);
+				}
+			}
+		}	
 		
 	}
 	
