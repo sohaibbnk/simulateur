@@ -5,7 +5,14 @@ public class Employee {
 	
 	
 	
+<<<<<<< HEAD
+	///constructeur
+	public Employee(int time) {
+	this.remainingServiceTime=time;
+	}
+=======
 	
+>>>>>>> 40b815da5012e6b9a776a7066eeff22fcecc3677
 	
 	
 	
