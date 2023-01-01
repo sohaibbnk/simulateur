@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class StatisticManager {
 	ArrayList<Client> listServedClient = new ArrayList<>();
 	ArrayList<Client> listNonServedClient = new ArrayList<>();
- public void registerServedClient(Client client) {
+ 
+	public void registerServedClient(Client client) {
 	 listServedClient.add(client);
  }
  
@@ -13,6 +14,14 @@ public class StatisticManager {
 	 listNonServedClient.add(client);
  }
  
+ public double calculateAverageEmployOccupationRate(int nbrEmlpoyee) {
+	 int occupationTime=0;
+	 for(int i=0;i<listServedClient.size();i++) {
+		 occupationTime = occupationTime + listServedClient.get(i).getServiceTime();
+		  
+	 }
+	 return (double) occupationTime/nbrEmlpoyee;
+ }
  
  
   

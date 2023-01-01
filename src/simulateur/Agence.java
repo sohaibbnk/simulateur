@@ -18,7 +18,6 @@ public class Agence {
 		queue = new Queue(); 
 		
 		
-		
 	}
 	
 	
