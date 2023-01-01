@@ -4,7 +4,13 @@ package simulateur;
 
 public class Queue {
      Client client;
+<<<<<<< HEAD
 	ArrayList<Client> cl = new ArrayList<>();
+=======
+	ArrayList<Client> queue = new ArrayList<>(); /// les clients arrive dans le simulateur 
+	
+	public Queue() {}
+>>>>>>> 4f4e3f73d73ae2612c8eb4333441477067fb5d75
 	
 	public boolean isEmpty() {
 		if(cl.size()==0) {

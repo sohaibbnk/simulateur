@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Agence {
 	
 	private int nbrEmployee;
+	Queue queue;
 	ArrayList<Employee> listEmployee = new ArrayList<>();
 	
 	
@@ -14,6 +15,7 @@ public class Agence {
 			Employee employee = new Employee();
 			listEmployee.add(employee);
 		}
+		queue = new Queue(); 
 		
 		
 	}

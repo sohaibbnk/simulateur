@@ -5,6 +5,7 @@ public class Employee {
 	private int totalTime;
 	Client client;
 	
+<<<<<<< HEAD
 	///constructeur
 	public Employee(int time) {
 	this.remainingServiceTime=time;
@@ -22,6 +23,26 @@ public class Employee {
 			}
 		}
 	}
+=======
+	
+	
+	
+	
+	
+	
+	 
+	
+	public void service (Client client , int serviceTime) {
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+>>>>>>> 4f4e3f73d73ae2612c8eb4333441477067fb5d75
 	
 	public boolean serviceFinished() {
 		if(remainingServiceTime==0)

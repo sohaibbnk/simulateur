@@ -1,12 +1,16 @@
 package simulateur;
 
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.Random;
+=======
+>>>>>>> 4f4e3f73d73ae2612c8eb4333441477067fb5d75
 
 public class Simulation {
 	SimulationEntry simulationEntry;
 	SimulationUtility simulationUtility;
 	StatisticManager statisticManager;
+<<<<<<< HEAD
     ArrayList<Client>listClient=new  ArrayList<>();
 	Agency Ag;
 	Queue que;
@@ -55,5 +59,27 @@ public void simulate(SimulationEntry se){
 	}
 }
 
+=======
+	Agence agance;
+	ArrayList<Client> listClients = new ArrayList<>(); //tous les clients creat par le simulateure 
+	
+	
+ 
+ 
+ public Simulation(SimulationEntry simulationEntry) {
+		 agance = new Agence(this.simulationEntry.getEmployeeCount());
+		
+		
+	}
+
+
+
+
+
+//constructor
+ public Simulation() {}
+ 
+
+>>>>>>> 4f4e3f73d73ae2612c8eb4333441477067fb5d75
  
 }
