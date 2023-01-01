@@ -7,6 +7,7 @@ public class Client {
 	private int departureTime;
 	private int patience;
 	StatisticManager statisticManager;
+	Queue queue;
 	
 	
 	public int getPatience() {

@@ -8,5 +8,20 @@ public class Employee {
 	
 	
 	
+	
+	
+	
+	public void service (Client client , int serviceTime) {
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
