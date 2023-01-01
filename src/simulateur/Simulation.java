@@ -1,12 +1,14 @@
 package simulateur;
 
 public class Simulation {
- private int simluationDuration;
- private int employeeCount;
- private int minSeriveTime;
- private int ServiceTime;
- private int clientArriveValInterval;
+	SimulationEntry simulationEntry;
+	SimulationUtility simulationUtility;
+	StatisticManager statisticManager;
+	
+	
+	
  
+<<<<<<< HEAD
  //constructor
  public Simulation(SimulationEntry sumE) {
 	 this.simluationDuration=sumE.getSimluationDuration();
@@ -59,5 +61,22 @@ public void simulate(SimulationEntry se) {
 	  	
 	}
 }
+=======
+ 
+ public Simulation(SimulationEntry simulationEntry) {
+		Agence agance = new Agence(this.simulationEntry.getEmployeeCount());
+		
+		
+	}
+
+
+
+
+
+//constructor
+ public Simulation() {}
+ 
+
+>>>>>>> 40b815da5012e6b9a776a7066eeff22fcecc3677
  
 }
