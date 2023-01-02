@@ -4,13 +4,7 @@ package simulateur;
 
 public class Queue {
      Client client;
-<<<<<<< HEAD
 	ArrayList<Client> cl = new ArrayList<>();
-=======
-	ArrayList<Client> queue = new ArrayList<>(); /// les clients arrive dans le simulateur 
-	
-	public Queue() {}
->>>>>>> 4f4e3f73d73ae2612c8eb4333441477067fb5d75
 	
 	public boolean isEmpty() {
 		if(cl.size()==0) {
@@ -21,6 +15,11 @@ public class Queue {
 	}
 	public void addQueueLast(Client client) {
 		cl.add(client);
+	}
+	
+	public void removeQueueFirst() {
+		if(cl!=null)
+			cl.remove(0);
 	}
 	
 	public Client getQueueFirst() {
@@ -35,8 +34,9 @@ public class Queue {
 				cl.get(i).setServiceStartTime(cl.get(i).getServiceStartTime()+1);
 			
 			}
-			for(int i=0;i<cl.size();i++) {
-				if(cl.get(i).getServiceStartTime()==7) {
+			for(int i=0;i<cl.size();i++){
+				if(cl.get(i).getServiceStartTime()==7){
+					System.out.println("////////// "+cl.get(i).getId());
 					cl.get(i).statisticManager.registerNonServedClient(client);
 					cl.remove(i);
 				}

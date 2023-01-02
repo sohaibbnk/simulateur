@@ -3,15 +3,16 @@ package simulateur;
 public class Client {
 	
 	private int arriveTime;
-	private int serviceTime;
+	private int serviceStartTime;
 	private int departureTime;
 	private int patience;
+	private int id;
 	StatisticManager statisticManager;
-<<<<<<< HEAD
 	Queue que;
 	Employee employe;
 	//constructor
-	public Client(int arriveTime , int serviceStartTime , int departureTime,StatisticManager statisticManager) {
+	public Client(int id,int arriveTime , int serviceStartTime , int departureTime,StatisticManager statisticManager) {
+     this.id=id;
 	 this.arriveTime=arriveTime;
 	 this.serviceStartTime=serviceStartTime;
 	 this.departureTime=departureTime;
@@ -26,6 +27,15 @@ public class Client {
 		this.patience = patience;
 	}
 	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public Client() {}
 	
 	public int getArriveTime() {
@@ -52,51 +62,17 @@ public class Client {
 		this.departureTime = departureTime;
 	}
 	///fateh 
+
 	@Override
 	public String toString() {
 		return "Client [arriveTime=" + arriveTime + ", serviceStartTime=" + serviceStartTime + ", departureTime="
-				+ departureTime + "]";
-	}
-=======
-	Queue queue;
-	
-	
-	public Client() {}
-	
-	public int getPatience() {
-		return patience;
-	}
-
-	public void setPatience(int patience) {
-		this.patience = patience;
+				+ departureTime + ", id=" + id + ", employe=" + employe.getId() + "]";
 	}
 
 	
 
-	public int getArriveTime() {
-		return arriveTime;
-	}
-
-	public int getServiceTime() {
-		return serviceTime;
-	}
-
-	public int getDepartureTime() {
-		return departureTime;
-	}
-
-	public void setArriveTime(int arriveTime) {
-		this.arriveTime = arriveTime;
-	}
-
-	public void setServiceTime(int serviceTime) {
-		this.serviceTime = serviceTime;
-	}
-
-	public void setDepartureTime(int departureTime) {
-		this.departureTime = departureTime;
-	}
->>>>>>> 4f4e3f73d73ae2612c8eb4333441477067fb5d75
+	
+	
 	
 	
 	

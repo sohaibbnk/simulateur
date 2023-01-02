@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Agency {
 	
-    ArrayList<Employee> em =new ArrayList<>();
+    ArrayList<Employee>em=new ArrayList<>();
 	Random rand=new Random();
     Queue qu;
     int j;
@@ -14,6 +14,7 @@ public class Agency {
 		qu=new Queue();
 		for(int i=0 ;i<nbrEmploye;i++) {
 			Employee emp=new Employee(0);
+			emp.setId(i);
 			em.add(emp);
 		}
 	}
@@ -21,7 +22,7 @@ public class Agency {
 	public Employee getEmployee() {
 		
 		for( j=0 ; j<em.size() ; j++) {
-			if(em.get(j).isFree())
+			if(em.get(j).isFree() || em.get(j).serviceFinished())
 				break;
 		}
 		
@@ -29,7 +30,10 @@ public class Agency {
 
 			do {
 				int randEmploye=rand.nextInt(em.size());
-				return em.get(randEmploye);
+				if(em.get(randEmploye).isFree() || em.get(randEmploye).serviceFinished()) {
+					return em.get(randEmploye);
+				}
+				
 
 			}while(true);
 			

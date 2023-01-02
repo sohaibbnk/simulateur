@@ -1,52 +1,29 @@
 package simulateur;
 
+import java.io.InputStreamReader;
+
 public class Employee {
+	private int id;
 	private int remainingServiceTime;
 	private int totalTime;
 	Client client;
 	
-<<<<<<< HEAD
 	///constructeur
 	public Employee(int time) {
 	this.remainingServiceTime=time;
 	}
 	
-	public void serves(Client client,int serviceTime) {
+	public void serves(Client client,int serviceTime){
+		totalTime+=1;
 		this.client=client;
 		this.remainingServiceTime=serviceTime;
-		
-		if(!isFree()) {
-			
-			while(!serviceFinished()){
-				work();
-				remainingServiceTime-=1;	
-			}
-		}
+		//client.setDepartureTime(serviceTime-5);
 	}
-=======
-	
-	
-	
-	
-	
-	
-	 
-	
-	public void service (Client client , int serviceTime) {
-		
-	}
-	
-	
-	
-	
-	
-	
-	
->>>>>>> 4f4e3f73d73ae2612c8eb4333441477067fb5d75
 	
 	public boolean serviceFinished() {
-		if(remainingServiceTime==0)
+		if(remainingServiceTime==0 || remainingServiceTime<0) {
 			return true;
+		}
 		else return false;
 	}
 	
@@ -57,6 +34,32 @@ public class Employee {
 	}
 	
 	public void work() {
-		totalTime+=1;
+		remainingServiceTime-=1;
 	}
+
+	public int getRemainingServiceTime() {
+		return remainingServiceTime;
+	}
+
+	public void setRemainingServiceTime(int remainingServiceTime) {
+		this.remainingServiceTime = remainingServiceTime;
+	}
+
+	public int getTotalTime() {
+		return totalTime;
+	}
+
+	public void setTotalTime(int totalTime) {
+		this.totalTime = totalTime;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	
 }
