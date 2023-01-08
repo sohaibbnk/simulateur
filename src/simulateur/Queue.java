@@ -4,8 +4,16 @@ package simulateur;
 
 public class Queue {
      Client client;
+     int ArrivelTime;
+     int PatienceClient;
+     ArrayList<Employee> em;
 	ArrayList<Client> cl = new ArrayList<>();
 	
+	public Queue(ArrayList<Employee> em,int ArrivelTime,int PatienceClient){
+		this.em=em;
+		this.PatienceClient=PatienceClient;
+		this.ArrivelTime=ArrivelTime;
+	}
 	public boolean isEmpty() {
 		if(cl.size()==0) {
 			return true;
@@ -31,18 +39,28 @@ public class Queue {
 			
 			for(int i=0;i<cl.size();i++) {
 				//cl.get(i).setPatience(cl.get(i).getPatience()+1);
-				cl.get(i).setServiceStartTime(cl.get(i).getServiceStartTime()+1);
+				cl.get(i).setPatience(cl.get(i).getPatience()+1);
 			
 			}
 			for(int i=0;i<cl.size();i++){
-				if(cl.get(i).getServiceStartTime()==7){
-					System.out.println("////////// "+cl.get(i).getId());
-					cl.get(i).statisticManager.registerNonServedClient(client);
+				if(cl.get(i).getPatience()==PatienceClient){
+					System.out.println(cl.get(i));
+					cl.get(i).setDepartureTime(cl.get(i).getArriveTime()+cl.get(i).getPatience());
+					//System.out.println("////////// "+cl.get(i));
+					cl.get(i).statisticManager.registerNonServedClient(cl.get(i));
 					cl.remove(i);
 				}
 			}
 		}	
 		
+	}
+	
+	public void updateEmployeePatience() {
+		 for( int k=0;k<em.size(); k++) {
+				if(!em.get(k).isFree()){
+					em.get(k).work();
+				}
+			}
 	}
 	
 	

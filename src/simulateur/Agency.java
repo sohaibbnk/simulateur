@@ -10,8 +10,8 @@ public class Agency {
     Queue qu;
     int j;
     
-	public Agency(int nbrEmploye) {
-		qu=new Queue();
+	public Agency(int nbrEmploye , int ArrivelTime,int PatienceClient) {
+		qu=new Queue(em,ArrivelTime,PatienceClient);
 		for(int i=0 ;i<nbrEmploye;i++) {
 			Employee emp=new Employee(0);
 			emp.setId(i);

@@ -7,12 +7,14 @@ public class Client {
 	private int departureTime;
 	private int patience;
 	private int id;
+	private int restTime;
 	StatisticManager statisticManager;
 	Queue que;
 	Employee employe;
 	//constructor
-	public Client(int id,int arriveTime , int serviceStartTime , int departureTime,StatisticManager statisticManager) {
+	public Client(int id,int arriveTime , int serviceStartTime , int departureTime,StatisticManager statisticManager,int restTime) {
      this.id=id;
+     this.restTime=restTime;
 	 this.arriveTime=arriveTime;
 	 this.serviceStartTime=serviceStartTime;
 	 this.departureTime=departureTime;
@@ -28,6 +30,14 @@ public class Client {
 	}
 	
 	
+	public Employee getEmploye() {
+		return employe;
+	}
+
+	public void setEmploye(Employee employe) {
+		this.employe = employe;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -65,8 +75,10 @@ public class Client {
 
 	@Override
 	public String toString() {
-		return "Client [arriveTime=" + arriveTime + ", serviceStartTime=" + serviceStartTime + ", departureTime="
-				+ departureTime + ", id=" + id + ", employe=" + employe.getId() + "]";
+		if(employe!=null)
+		return  " "+id+"	 |	  "+arriveTime +"	  |		"+ serviceStartTime +"	   |	       "+departureTime +"		|	 "+ employe.getId()+"		|	"+patience+" unite"+" 	|		"+restTime+"          |";
+		else 
+		return  " "+id+"	 |	  "+arriveTime +"	  |	    non served	   |       non served	        |   	vide		|       "+patience+" unite"+" 	|		"+restTime+"          |";
 	}
 
 	

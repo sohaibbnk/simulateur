@@ -14,7 +14,7 @@ public class Employee {
 	}
 	
 	public void serves(Client client,int serviceTime){
-		totalTime+=1;
+		totalTime+=5;
 		this.client=client;
 		this.remainingServiceTime=serviceTime;
 		//client.setDepartureTime(serviceTime-5);

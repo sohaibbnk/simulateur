@@ -8,19 +8,40 @@ public class SimulationEntry {
 	 private int ServiceTime;
 	 private int clientArriveValInterval;
 	 private int maxServiceTime;
+	 private int patienceClient;
 	 
-	 public SimulationEntry(int simluationDuration,int employeeCount,int minSeriveTime,int ServiceTime,int clientArriveValInterval) {
+	 public SimulationEntry(int simluationDuration,int employeeCount,int minSeriveTime,int maxSeriveTime,int clientArriveValInterval,int patienceClient) {
 		 
 	 this.simluationDuration=simluationDuration;
 	 this.employeeCount=employeeCount;
 	 this.minSeriveTime=minSeriveTime;
+	 this.maxServiceTime=maxSeriveTime;
+	 this.clientArriveValInterval=clientArriveValInterval;
+	 this.patienceClient=patienceClient;
 	 this.ServiceTime=ServiceTime;
 	 this.clientArriveValInterval=clientArriveValInterval;
 	 }
 	 
-	 public int getSimluationDuration() {
+	 public int getMaxServiceTime() {
+		return maxServiceTime;
+	}
+
+	public void setMaxServiceTime(int maxServiceTime) {
+		this.maxServiceTime = maxServiceTime;
+	}
+
+	public int getSimluationDuration() {
 			return simluationDuration;
 		}
+	
+
+		public int getPatienceClient() {
+		return patienceClient;
+	}
+
+	public void setPatienceClient(int patienceClient) {
+		this.patienceClient = patienceClient;
+	}
 
 		public void setSimluationDuration(int simluationDuration) {
 			this.simluationDuration = simluationDuration;
@@ -58,11 +79,5 @@ public class SimulationEntry {
 			this.clientArriveValInterval = clientArriveValInterval;
 		}
 
-		@Override
-		public String toString() {
-			return "SimulationEntry [simluationDuration=" + simluationDuration + ", employeeCount=" + employeeCount
-					+ ", minSeriveTime=" + minSeriveTime + ", ServiceTime=" + ServiceTime + ", clientArriveValInterval="
-					+ clientArriveValInterval + "]";
-		}
 		
 }
